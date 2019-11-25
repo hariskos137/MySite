@@ -1,0 +1,418 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*navigation css*/
+
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #5d4954;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo {
+  color: rgb(235, 235, 235);
+  letter-spacing: 5px;
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo :hover {
+  font-style: italic;
+  font-size: 1.5rem;
+  color: rgb(255, 0, 0);
+  transition: all 0.5s ease-in;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links li :hover {
+  color: black;
+  font-size: 1.7rem;
+  transition: all 0.5s ease;
+}
+
+.nav-links li a {
+  color: rgb(235, 235, 235);
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(235, 235, 235);
+  margin: 5px;
+  transition: all 2s ease;
+}
+
+@media screen and (max-width: 1360px) {
+  .nav-links {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 764px) {
+  body {
+    overflow: hidden scroll;
+    cursor: pointer;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: #5d4954;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.7s ease-in;
+    z-index: 100;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/*main page css*/
+
+body {
+  background-color: rgb(46, 46, 46);
+  color: white;
+  height: 100vh;
+  line-height: 1;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
+.footer {
+  position: fixed;
+  width: 100vw;
+}
+
+.social-icons {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgb(255, 253, 226);
+  border-radius: 25px;
+}
+
+.social-icons a {
+  padding: 0.4rem;
+  transition: all 0.7s ease-in-out;
+  color: rgb(33, 83, 150);
+}
+
+.social-icons a:hover {
+  color: rgb(248, 79, 0);
+}
+
+.copyright {
+  background: rgb(41, 88, 158);
+  border-radius: 25px;
+  font-size: 1rem;
+  position: fixed;
+  bottom: 0.4rem;
+  right: 1rem;
+  text-align: right;
+  padding: 1rem;
+  color: white;
+}
+
+/*home page*/
+
+.home {
+  height: 100%;
+  padding-top: 40vh;
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(
+      to right,
+      rgba(43, 43, 43, 0.3),
+      rgba(43, 43, 43, 0.1)
+    ),
+    url("./img/model1.jpg") center top;
+  background-size: cover;
+}
+
+.home .name {
+  font-size: 6rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  border-bottom: 2px solid white;
+}
+
+.home .lastname {
+  color: rgb(255, 102, 0);
+  font-weight: 700;
+}
+
+/*about page*/
+
+.text-secondary {
+  color: rgb(209, 84, 0);
+}
+
+.about {
+  padding-bottom: 2rem;
+}
+
+.about .bio-image {
+  height: 50vh;
+  width: 100%;
+  background: linear-gradient(
+      to right,
+      rgba(43, 43, 43, 0.5),
+      rgba(43, 43, 43, 0.2)
+    ),
+    url("./img/model1.jpg") center top;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.about p {
+  margin-bottom: 2rem;
+}
+
+.about .about-bio {
+  width: 80%;
+  text-align: center;
+}
+
+.about .text-secondary {
+  padding-bottom: 1rem;
+}
+
+.job-list {
+  width: 80vw;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.job {
+  background: rgb(68, 68, 68);
+  padding: 0.1rem;
+  border-bottom: 5px solid rgb(209, 84, 0);
+}
+
+.job h6 {
+  margin: 0.7rem 0;
+}
+
+.about .social-icons {
+  display: flex;
+  flex-direction: column;
+}
+
+.about .copyright {
+  transform: rotate(90deg) translate(-3rem, -5rem) translateX(-2rem);
+}
+
+/*projects css*/
+
+.projects {
+  padding-bottom: 2rem;
+}
+
+.projects .projects-bio-image {
+  height: 40vh;
+  width: 100%;
+  background: linear-gradient(
+      to right,
+      rgba(43, 43, 43, 0.5),
+      rgba(43, 43, 43, 0.3)
+    ),
+    url("./img/model1.jpg") top center;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.projects .text-secondary {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.projects .projects-items {
+  width: 40vw;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5rem;
+}
+
+.projects .projects-item {
+  position: relative;
+  border-bottom: 5px solid rgb(209, 84, 0);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.projects-item img {
+  width: 100%;
+}
+
+.projects-item::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(175, 70, 0);
+  opacity: 0;
+  transition: all 0.7s ease-in;
+}
+
+.projects-item:hover::after {
+  top: 0;
+  opacity: 0.7;
+}
+
+.projects-item:hover .projects-button {
+  opacity: 1;
+}
+
+.projects .projects-buttons {
+  position: absolute;
+  font-size: 2rem;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  text-align: center;
+}
+
+.projects .projects-button {
+  opacity: 0;
+  color: rgb(255, 255, 255);
+  transition: all 0.4s ease-in;
+}
+
+.projects .projects-button:hover {
+  color: black;
+}
+
+.project-title {
+  position: relative;
+  text-align: left;
+  font-size: 2rem;
+  padding: 5px;
+}
+
+/*contact me css*/
+
+.contact {
+  height: 100%;
+  padding-top: 40vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+      to right,
+      rgba(43, 43, 43, 0.8),
+      rgba(43, 43, 43, 0.1)
+    ),
+    url("./img/model1.jpg") center top;
+  background-size: cover;
+}
+
+.contact h2 {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  font-size: 2rem;
+}
